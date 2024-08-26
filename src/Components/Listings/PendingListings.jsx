@@ -10,7 +10,7 @@ const PendingListings = () => {
     if (isAuthenticated) {
       const fetchPendingListings = async () => {
         try {
-          const response = await fetch('http://localhost:5000/api/pending-listings');
+          const response = await fetch('https://server-two-livid.vercel.app/api/pending-listings');
           if (!response.ok) {
             throw new Error('Failed to fetch pending listings');
           }
@@ -27,7 +27,7 @@ const PendingListings = () => {
 
   const handleApprove = async (id) => {
     try {
-      const response = await fetch('http://localhost:5000/api/approve-listing', {
+      const response = await fetch('https://server-two-livid.vercel.app/api/approve-listing', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const PendingListings = () => {
 
   const handleReject = async (id) => {
     try {
-      const response = await fetch('http://localhost:5000/api/reject-listing', {
+      const response = await fetch('https://server-two-livid.vercel.app/api/reject-listing', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
