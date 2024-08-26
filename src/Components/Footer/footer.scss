@@ -1,0 +1,40 @@
+.footer {
+    background-color: black; /* Dark background for the footer */
+    color: white; /* Text color */
+    padding: 0; /* Remove padding */
+    height: 60px; /* Fixed height for consistency */
+    display: flex; /* Use Flexbox for layout */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(150, 54, 54, 0.923); /* Optional: Add a shadow for visibility */
+    z-index: 1000;
+  
+  
+    .footer-content {
+      display: flex; /* Use Flexbox for layout */
+      justify-content: space-around; /* Space between sections */
+      align-items: center; /* Center items vertically */
+      width: 100%; /* Full width of the footer */
+      max-width: 1200px; /* Optional: Set a max width */
+      .footer-section {
+        flex: 1; /* Allow sections to grow equally */
+        text-align: center; /* Center text horizontally */
+  
+        h3 {
+          margin-bottom: 0.5rem; /* Space below the heading */
+          font-size: 1rem; /* Font size for headings */
+        }
+  
+        p {
+          margin: 0; /* Remove default margin */
+          font-size: 0.8rem; /* Font size for paragraphs */
+        }
+      }
+  
+      a {
+        color: white; /* Link color */
+        margin: 0 0.5rem; /* Space around links */
+      }
+    }
+  }

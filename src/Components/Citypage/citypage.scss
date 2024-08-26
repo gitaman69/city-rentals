@@ -1,0 +1,144 @@
+.container {
+  .overview {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    h1 {
+      color: black;
+      margin-left: 25px;
+    }
+
+    p {
+      color: black;
+      font-size: 3vh;
+    }
+  }
+
+  .rental-items {
+    max-height: 100dvh;
+    .rental-lists {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      grid-template-columns: repeat(3, 1fr);
+      list-style-type: none;
+      gap: 20px;
+
+      .list-items {
+        position: relative;
+        width: 400px;
+        height: 300px; // Adjust height to your preference
+        border: 2px solid black;
+        border-radius: 2rem;
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.668);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column; // Align items vertically
+        justify-content: space-between; // Ensure space between name and other items
+        align-items: center; // Center the items horizontally
+        padding: 1rem;
+        overflow: hidden;
+
+        &:hover{
+          filter: drop-shadow(0 0 30px black);
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5); // Dark overlay for text readability
+          z-index: 1;
+        }
+
+        .items {
+          position: relative;
+          z-index: 2;
+          color: white;
+          padding: 0.1rem;
+          margin: 0.5rem;
+          text-align: center; // Center text inside the div
+        }
+
+        h2.items {
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+          align-self: center; // Center the name at the top
+          margin-top: 1rem; // Add margin at the top for spacing
+        }
+
+        p.items {
+          margin-bottom: 0.25rem;
+          margin-top: auto; // Push the other items to the bottom
+        }
+
+        .items.contact {
+          position: relative;
+          cursor: pointer;
+
+          .hover-link {
+            display: none;
+            color: transparent; /* Hide the link initially */
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none; /* Remove underline from the link */
+            z-index: 1;
+          }
+
+          &:hover .hover-link {
+            display: flex; /* Show the link on hover */
+            color: rgb(165, 231, 235);
+            border: 2px solid black;
+            background-color: rgba(30, 29, 29, 0.336);
+            height: 50px;
+          }
+
+          &:hover {
+            color: transparent; /* Hide the original text on hover */
+          }
+        }
+      }
+    }
+  }
+}
+
+// Media query for mobile devices
+@media screen and (max-width: 480px) {
+  .container {
+    height: 200vh;
+    .rental-items {
+      height: 100vh;
+      .rental-lists {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+}
+
+// Media query for tablets (481px to 768px)
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .container {
+    height: auto;
+    padding: 15px;
+    .rental-items {
+      height: auto; // Adjust height as needed
+      align-content: center;
+      .rental-lists {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+}
