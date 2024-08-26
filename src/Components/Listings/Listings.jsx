@@ -29,7 +29,7 @@ const ListingForm = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://server-two-livid.vercel.app/api/pending-listings",
+        "https://backend-server-orcin.vercel.app/api/pending-listings",
         {
           method: "POST",
           headers: {

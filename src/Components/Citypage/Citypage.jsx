@@ -18,7 +18,7 @@ const Citypage = ({ searchQuery }) => {
     const fetchRentals = async () => {
       try {
         // Replace `http://localhost:5000` with the actual URL of your backend server
-        const backendUrl = "https://server-two-livid.vercel.app"; // Adjust this as needed
+        const backendUrl = "https://backend-server-orcin.vercel.app"; // Adjust this as needed
 
         // Construct the API endpoint based on searchQuery
         const url = searchQuery
