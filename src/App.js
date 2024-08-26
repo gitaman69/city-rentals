@@ -7,6 +7,7 @@ import '../src/App.css'
 import Citypage from './Components/Citypage/Citypage';
 import ListingForm from './Components/Listings/Listings';
 import PendingListings from './Components/Listings/PendingListings';
+import AboutUs from './Components/AboutUs/AboutUs';
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/city/:cityName" element={<Citypage searchQuery={searchQuery}/>} />
           <Route path="/listings" element={<ListingForm/>} />
           <Route path="/admin/pending-listings" element={<PendingListings />} />
+          <Route path="/about" element={<AboutUs/>} />
           {/* Add other routes here */}
         </Routes>
       </main>
