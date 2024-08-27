@@ -1,7 +1,10 @@
+/* Homepage.scss */
+
 .homepage {
   display: flex;
   justify-content: center;
   padding: 2rem;
+  flex: 1; /* Ensure the homepage content takes up the remaining space */
 
   .city-list {
     display: flex;
@@ -34,7 +37,6 @@
   #chandigarh{
     background-image: url('../../images/chandigarh.jpg');
   }
-  
 
   .city-card {
     background-size: cover;
@@ -50,7 +52,7 @@
     position: relative;
     filter: drop-shadow(0 0 25px black);
 
-    &:hover{
+    &:hover {
       filter: drop-shadow(10px 2px 30px black);
     }
 

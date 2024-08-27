@@ -1,7 +1,9 @@
+/* Homepage.scss */
 .homepage {
   display: flex;
   justify-content: center;
   padding: 2rem;
+  flex: 1; /* Ensure the homepage content takes up the remaining space */
 }
 .homepage .city-list {
   display: flex;

@@ -1,10 +1,12 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // Ensure the container takes full viewport height
+
   .overview {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+    text-align: center;
+    margin-bottom: 20px;
+    flex-shrink: 0;
 
     h1 {
       color: black;
@@ -18,7 +20,11 @@
   }
 
   .rental-items {
-    max-height: 100dvh;
+    flex: 1; // Make rental-items take up available space
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     .rental-lists {
       display: grid;
       justify-content: center;
@@ -30,20 +36,20 @@
       .list-items {
         position: relative;
         width: 400px;
-        height: 300px; // Adjust height to your preference
+        height: 300px;
         border: 2px solid black;
         border-radius: 2rem;
         box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.668);
         background-size: cover;
         background-position: center;
         display: flex;
-        flex-direction: column; // Align items vertically
-        justify-content: space-between; // Ensure space between name and other items
-        align-items: center; // Center the items horizontally
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
         padding: 1rem;
         overflow: hidden;
 
-        &:hover{
+        &:hover {
           filter: drop-shadow(0 0 30px black);
         }
 
@@ -54,7 +60,7 @@
           left: 0;
           width: 100%;
           height: 100%;
-          background: rgba(0, 0, 0, 0.5); // Dark overlay for text readability
+          background: rgba(0, 0, 0, 0.5);
           z-index: 1;
         }
 
@@ -64,19 +70,19 @@
           color: white;
           padding: 0.1rem;
           margin: 0.5rem;
-          text-align: center; // Center text inside the div
+          text-align: center;
         }
 
         h2.items {
           font-size: 1.5rem;
           margin-bottom: 0.5rem;
-          align-self: center; // Center the name at the top
-          margin-top: 1rem; // Add margin at the top for spacing
+          align-self: center;
+          margin-top: 1rem;
         }
 
         p.items {
           margin-bottom: 0.25rem;
-          margin-top: auto; // Push the other items to the bottom
+          margin-top: auto;
         }
 
         .items.contact {
@@ -85,7 +91,7 @@
 
           .hover-link {
             display: none;
-            color: transparent; /* Hide the link initially */
+            color: transparent;
             position: absolute;
             left: 0;
             top: 0;
@@ -94,12 +100,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none; /* Remove underline from the link */
+            text-decoration: none;
             z-index: 1;
           }
 
           &:hover .hover-link {
-            display: flex; /* Show the link on hover */
+            display: flex;
             color: rgb(165, 231, 235);
             border: 2px solid black;
             background-color: rgba(30, 29, 29, 0.336);
@@ -107,7 +113,7 @@
           }
 
           &:hover {
-            color: transparent; /* Hide the original text on hover */
+            color: transparent;
           }
         }
       }
@@ -118,9 +124,8 @@
 // Media query for mobile devices
 @media screen and (max-width: 480px) {
   .container {
-    height: 200vh;
+    min-height: 100vh;
     .rental-items {
-      height: 100vh;
       .rental-lists {
         grid-template-columns: repeat(1, 1fr);
       }
@@ -128,14 +133,13 @@
   }
 }
 
-// Media query for tablets (481px to 768px)
+// Media query for tablets
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .container {
-    height: auto;
+    min-height: 100vh;
     padding: 15px;
+
     .rental-items {
-      height: auto; // Adjust height as needed
-      align-content: center;
       .rental-lists {
         grid-template-columns: repeat(1, 1fr);
       }

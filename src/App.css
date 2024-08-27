@@ -1,9 +1,8 @@
+/* App.css */
+
 html, body {
   height: 100%;
   margin: 0;
-  /* background-image: url("./images/background2.jpg");
-  background-repeat: no-repeat;
-  background-size: cover; */
   background-color: #DAD7CD;
 }
 
@@ -18,12 +17,13 @@ main {
 }
 
 .footer {
-  background-color: #333; /* Dark background for the footer */
-  color: white; /* Text color */
-  padding: 0; /* Remove padding for fixed height */
-  height: 80px; /* Match the height of the header */
-  display: flex; /* Use Flexbox for layout */
-  align-items: center; /* Center content vertically */
-  justify-content: center; /* Center content horizontally */
+  background-color: #333;
+  color: white;
+  padding: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  box-shadow: 0 -2px 5px rgba(150, 54, 54, 0.923); /* Optional: Add a shadow for visibility */
 }

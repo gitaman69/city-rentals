@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import "../Citypage/citypage.css";
+import '../Citypage/citypage.scss';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

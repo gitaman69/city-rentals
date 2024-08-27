@@ -2,7 +2,7 @@
   background-color: black; /* Dark background for the footer */
   color: white; /* Text color */
   padding: 0; /* Remove padding */
-  height: 60px; /* Fixed height for consistency */
+  height: 80px; /* Fixed height for consistency */
   display: flex; /* Use Flexbox for layout */
   align-items: center; /* Center content vertically */
   justify-content: center; /* Center content horizontally */
@@ -28,9 +28,5 @@
 .footer .footer-content .footer-section p {
   margin: 0; /* Remove default margin */
   font-size: 0.8rem; /* Font size for paragraphs */
-}
-.footer .footer-content a {
-  color: white; /* Link color */
-  margin: 0 0.5rem; /* Space around links */
 }
 /*# sourceMappingURL=footer.css.map */
