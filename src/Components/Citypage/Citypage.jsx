@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import '../Citypage/citypage.scss';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import "../Citypage/citypage.scss";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Citypage = ({ searchQuery }) => {
   const { cityName } = useParams();
@@ -10,12 +10,15 @@ const Citypage = ({ searchQuery }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(()=>{
-    AOS.init({duration:1000});
-  },[]);
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   useEffect(() => {
     const fetchRentals = async () => {
+      if (searchQuery && searchQuery.length !== 6) {
+        return;
+      }
       try {
         // Replace `http://localhost:5000` with the actual URL of your backend server
         const backendUrl = "https://backend-server-orcin.vercel.app"; // Adjust this as needed
@@ -28,7 +31,9 @@ const Citypage = ({ searchQuery }) => {
         const response = await fetch(url);
 
         if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.statusText}`);
+          throw new Error(
+            `Network response was not ok: ${response.statusText}`
+          );
         }
 
         const data = await response.json();
@@ -70,8 +75,11 @@ const Citypage = ({ searchQuery }) => {
                   <p className="items">Price: {item.Price}</p>
                   <p className="items contact">
                     Contact: {item.Contact}
-                    <a href={`https://wa.me/+91${item.Contact}`} className="hover-link">
-                    Contact on WhatsApp
+                    <a
+                      href={`https://wa.me/+91${item.Contact}`}
+                      className="hover-link"
+                    >
+                      Contact on WhatsApp
                     </a>
                   </p>
                   <p className="items">Address: {item.Address}</p>
