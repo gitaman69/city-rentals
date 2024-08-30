@@ -30,6 +30,32 @@
         margin: 0; /* Remove default margin */
         font-size: 0.8rem; /* Font size for paragraphs */
       }
+
+      .links{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        p{
+          color: white;
+
+          &:hover{
+            color: aquamarine;
+          }
+        }
+      }
+    }
+
+  }
+  @media screen and (max-width:480px){
+    .footer-content{
+      .footer-section{
+        .links{
+          flex-direction: column;
+          gap: 0;
+        }
+      }
     }
   }
 }

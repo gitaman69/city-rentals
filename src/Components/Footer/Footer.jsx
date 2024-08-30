@@ -1,5 +1,6 @@
-import React from 'react';
-import '../Footer/footer.scss';
+import React from "react";
+import { CiFacebook, CiInstagram, CiMail } from "react-icons/ci";
+import "../Footer/footer.scss";
 
 const Footer = () => {
   return (
@@ -11,12 +12,49 @@ const Footer = () => {
         </div>
         <div className="footer-section">
           <h3>Contact</h3>
-          <p>Email: contact@mywebsite.com</p>
-          <p>Phone: (123) 456-7890</p>
+          <p>Email: cityrentalsbuisness@gmail.com</p>
+          <p>Phone: +916377838527</p>
         </div>
         <div className="footer-section">
           <h3>Follow Us</h3>
-          <p>Facebook | Twitter | Instagram</p>
+          <div className="links">
+            <div className="facebook">
+              <a
+                href="https://www.instagram.com/ig__aman"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p>
+                  <CiFacebook />
+                  Facebook
+                </p>
+              </a>
+            </div>
+            <div className="instagram">
+              <a
+                href="https://www.instagram.com/ig__aman"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p>
+                  <CiInstagram />
+                  Instagram
+                </p>
+              </a>
+            </div>
+            <div className="gmail">
+              <a
+                href="mailto:amanbhaker@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p>
+                  <CiMail />
+                  Mail
+                </p>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
