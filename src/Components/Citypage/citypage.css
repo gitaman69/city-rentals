@@ -113,6 +113,10 @@
   .container .rental-items .rental-lists {
     grid-template-columns: repeat(1, 1fr);
   }
+  .container .rental-items .rental-lists .list-items {
+    margin-left: -2rem;
+    width: 300px;
+  }
 }
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .container {

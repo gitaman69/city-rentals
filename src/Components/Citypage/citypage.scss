@@ -128,6 +128,10 @@
     .rental-items {
       .rental-lists {
         grid-template-columns: repeat(1, 1fr);
+        .list-items{
+          margin-left: -2rem;
+          width: 300px;
+        }
       }
     }
   }
