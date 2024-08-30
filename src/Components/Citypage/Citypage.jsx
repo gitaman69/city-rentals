@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import "../Citypage/citypage.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import PreLoader from "../PreLoader1/PreLoader";
 
 const Citypage = ({ searchQuery }) => {
   const { cityName } = useParams();
@@ -48,7 +49,7 @@ const Citypage = ({ searchQuery }) => {
     fetchRentals();
   }, [cityName, searchQuery]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p><PreLoader/></p>;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
