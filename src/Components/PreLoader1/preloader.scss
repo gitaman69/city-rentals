@@ -1,4 +1,3 @@
-
 @keyframes drive {
 	0% {
 		margin-left: -364px;
@@ -20,6 +19,7 @@
 		opacity: 0;
 	}
 }
+
 .centerBike {
 	position: absolute;
 	top: 50%;
@@ -27,6 +27,7 @@
 	margin-top: 26px;
 	margin-left: -12px;
 }
+
 .center {
 	position: absolute;
 	top: 50%;
@@ -34,13 +35,15 @@
 	margin-top: -50px;
 	margin-left: -50px;
 }
+
 #loop {
 	height: 100px;
 	width: 100px;
-	border: #bb5f27 solid 4px;
+	border: #000 solid 4px; // Change border color to black
 	border-radius: 200px;
+
 	&:before {
-		background: linear-gradient(to left, rgba(187, 95, 39, 0) 0%, rgba(187, 95, 39, 1) 30%, rgba(187, 95, 39, 1) 70%, rgba(187, 95, 39, 0) 100%);
+		background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%); // Change gradient color to black
 		content: "";
 		display: block;
 		height: 4px;
@@ -50,11 +53,13 @@
 		width: 300px;
 	}
 }
+
 #bike-wrapper {
 	height: 108px;
 	width: 108px;
 	animation: drive 3s linear infinite;
 }
+
 #bike {
 	height: 24px;
 	width: 25px;

@@ -9,6 +9,7 @@ const Citypage = ({ searchQuery }) => {
   const { cityName } = useParams();
   const [rentals, setRentals] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [dataLoaded, setDataLoaded] = useState(false); // New state to track data loading
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -18,8 +19,10 @@ const Citypage = ({ searchQuery }) => {
   useEffect(() => {
     const fetchRentals = async () => {
       if (searchQuery && searchQuery.length !== 6) {
+        setLoading(false); // Stop loading if searchQuery length is incorrect
         return;
       }
+      
       try {
         // Replace `http://localhost:5000` with the actual URL of your backend server
         const backendUrl = "https://backend-server-orcin.vercel.app"; // Adjust this as needed
@@ -39,17 +42,26 @@ const Citypage = ({ searchQuery }) => {
 
         const data = await response.json();
         setRentals(data);
-        setLoading(false);
+        setDataLoaded(true); // Data has been loaded
       } catch (err) {
         setError(err);
-        setLoading(false);
+        setDataLoaded(true); // Data has been loaded, but with error
       }
     };
 
     fetchRentals();
+
+    // Timer to stop preloader after 5 seconds
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2200);
+
+    return () => clearTimeout(timer);
+
   }, [cityName, searchQuery]);
 
-  if (loading) return <p><PreLoader/></p>;
+  if (loading) return <PreLoader />; // Show preloader while loading
+
   if (error) return <p>Error: {error.message}</p>;
 
   return (
