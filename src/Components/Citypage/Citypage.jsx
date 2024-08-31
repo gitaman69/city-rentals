@@ -9,7 +9,7 @@ const Citypage = ({ searchQuery }) => {
   const { cityName } = useParams();
   const [rentals, setRentals] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [dataLoaded, setDataLoaded] = useState(false); // New state to track data loading
+  // const [dataLoaded, setDataLoaded] = useState(false); // New state to track data loading
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -42,21 +42,22 @@ const Citypage = ({ searchQuery }) => {
 
         const data = await response.json();
         setRentals(data);
-        setDataLoaded(true); // Data has been loaded
+        // setDataLoaded(true); // Data has been loaded
+        setLoading(false);
       } catch (err) {
         setError(err);
-        setDataLoaded(true); // Data has been loaded, but with error
+        // setDataLoaded(true); // Data has been loaded, but with error
       }
     };
 
     fetchRentals();
 
     // Timer to stop preloader after 5 seconds
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2200);
+    // const timer = setTimeout(() => {
+    //   setLoading(false);
+    // }, 500);
 
-    return () => clearTimeout(timer);
+    // return () => clearTimeout(timer);
 
   }, [cityName, searchQuery]);
 
