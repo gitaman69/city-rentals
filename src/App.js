@@ -9,6 +9,7 @@ import ListingForm from './Components/Listings/Listings';
 import PendingListings from './Components/Listings/PendingListings';
 import AboutUs from './Components/AboutUs/AboutUs';
 import Contact from './Components/Contact/Contact';
+import Privacy from './Components/PrivacyPolicy/Privacy';
 
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/admin/pending-listings" element={<PendingListings />} />
           <Route path="/about" element={<AboutUs/>} />
           <Route path="/contact" element={<Contact/>} />
+          <Route path="/privacypolicy" element={<Privacy/>} />
           {/* Add other routes here */}
         </Routes>
       </main>

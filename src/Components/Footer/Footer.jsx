@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { CiFacebook, CiInstagram, CiMail } from "react-icons/ci";
 import "../Footer/footer.scss";
 
@@ -8,7 +9,9 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-section">
           <h3>About Us</h3>
-          <p>Learn more about our mission and vision.</p>
+          <p>Learn more about our mission and vision. <Link to={`/privacypolicy`}>
+            <button style={{backgroundColor:"transparent",border:"1px solid white",color:"white",cursor:"pointer"}}>Privacy Policy</button>
+          </Link></p>
         </div>
         <div className="footer-section">
           <h3>Contact</h3>
