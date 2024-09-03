@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 import "../Citypage/citypage.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -9,7 +10,6 @@ const Citypage = ({ searchQuery }) => {
   const { cityName } = useParams();
   const [rentals, setRentals] = useState([]);
   const [loading, setLoading] = useState(true);
-  // const [dataLoaded, setDataLoaded] = useState(false); // New state to track data loading
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -19,15 +19,12 @@ const Citypage = ({ searchQuery }) => {
   useEffect(() => {
     const fetchRentals = async () => {
       if (searchQuery && searchQuery.length !== 6) {
-        setLoading(false); // Stop loading if searchQuery length is incorrect
+        setLoading(false);
         return;
       }
       
       try {
-        // Replace `http://localhost:5000` with the actual URL of your backend server
-        const backendUrl = "https://backend-server-orcin.vercel.app"; // Adjust this as needed
-
-        // Construct the API endpoint based on searchQuery
+        const backendUrl = "https://backend-server-orcin.vercel.app";
         const url = searchQuery
           ? `${backendUrl}/api/rentals/${cityName}/${searchQuery}`
           : `${backendUrl}/api/rentals/${cityName}`;
@@ -35,34 +32,22 @@ const Citypage = ({ searchQuery }) => {
         const response = await fetch(url);
 
         if (!response.ok) {
-          throw new Error(
-            `Network response was not ok: ${response.statusText}`
-          );
+          throw new Error(`Network response was not ok: ${response.statusText}`);
         }
 
         const data = await response.json();
         setRentals(data);
-        // setDataLoaded(true); // Data has been loaded
         setLoading(false);
       } catch (err) {
         setError(err);
-        // setDataLoaded(true); // Data has been loaded, but with error
+        setLoading(false);
       }
     };
 
     fetchRentals();
-
-    // Timer to stop preloader after 5 seconds
-    // const timer = setTimeout(() => {
-    //   setLoading(false);
-    // }, 500);
-
-    // return () => clearTimeout(timer);
-
   }, [cityName, searchQuery]);
 
-  if (loading) return <PreLoader />; // Show preloader while loading
-
+  if (loading) return <PreLoader />;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
@@ -75,38 +60,48 @@ const Citypage = ({ searchQuery }) => {
         {rentals.length > 0 ? (
           <ul className="rental-lists">
             {rentals.map((item) => (
-              <li key={item.ID}>
-                <div
-                  className="list-items"
-                  style={{
-                    backgroundImage: `url(${item.Image})`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                    overflow: "hidden",
-                  }}
-                >
-                  <h2 className="items">{item.Name_of_Place}</h2>
-                  <p className="items">Price: {item.Price}</p>
-                  <p className="items contact">
-                    Contact: {item.Contact}
-                    <a
-                      href={`https://wa.me/+91${item.Contact}`}
-                      className="hover-link"
-                    >
-                      Contact on WhatsApp
-                    </a>
-                  </p>
-                  <p className="items">Address: {item.Address}</p>
-                  <p className="items">Pincode: {item.Pincode}</p>
-                </div>
-              </li>
+              <RentalItem key={item.ID} item={item} />
             ))}
           </ul>
         ) : (
-          <h2>No information available. </h2>
+          <h2>No information available.</h2>
         )}
       </div>
     </div>
+  );
+};
+
+const RentalItem = ({ item }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,  // Load the content only once when in view
+    threshold: 0.1,     // Trigger when 10% of the component is visible
+  });
+
+  return (
+    <li ref={ref}>
+      {inView && (
+        <div
+          className="list-items"
+          style={{
+            backgroundImage: `url(${item.Image})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            overflow: "hidden",
+          }}
+        >
+          <h2 className="items">{item.Name_of_Place}</h2>
+          <p className="items">Price: {item.Price}</p>
+          <p className="items contact">
+            Contact: {item.Contact}
+            <a href={`https://wa.me/+91${item.Contact}`} className="hover-link">
+              Contact on WhatsApp
+            </a>
+          </p>
+          <p className="items">Address: {item.Address}</p>
+          <p className="items">Pincode: {item.Pincode}</p>
+        </div>
+      )}
+    </li>
   );
 };
 
