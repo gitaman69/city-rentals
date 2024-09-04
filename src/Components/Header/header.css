@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 html, body {
   margin: 0;
   padding: 0;
@@ -10,8 +13,7 @@ html, body {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  background-color: #f8f8f8;
-  background-color: rgba(5, 67, 81, 0.404);
+  background-color: #343A40;
   z-index: 1000;
   width: auto;
   height: 7vh;
@@ -59,7 +61,7 @@ html, body {
   transition: color 0.3s ease;
 }
 .header .nav-links .nav-items .link:hover {
-  color: #007bff; /* Color on hover */
+  color: #A2D2FF; /* Color on hover */
 }
 .header .nav-links .nav-items .link::after {
   content: "";
@@ -68,7 +70,7 @@ html, body {
   bottom: 0;
   width: 0;
   height: 2px; /* Thickness of the border */
-  background-color: #007bff; /* Color of the border */
+  background-color: #A2D2FF; /* Color of the border */
   transition: width 0.3s ease; /* Animation for the border */
 }
 .header .nav-links .nav-items .link:hover::after {

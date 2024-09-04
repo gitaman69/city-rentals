@@ -9,11 +9,11 @@
   flex-shrink: 0;
 }
 .container .overview h1 {
-  color: black;
+  color: white;
   margin-left: 25px;
 }
 .container .overview p {
-  color: black;
+  color: white;
   font-size: 3vh;
 }
 .container .rental-items {
@@ -97,10 +97,11 @@
 }
 .container .rental-items .rental-lists .list-items .items.contact:hover .hover-link {
   display: flex;
-  color: rgb(165, 231, 235);
+  border-radius: 10px;
+  color: rgb(167, 190, 190);
   border: 2px solid black;
-  background-color: rgba(30, 29, 29, 0.336);
-  height: 50px;
+  background-color: black;
+  height: 25px;
 }
 .container .rental-items .rental-lists .list-items .items.contact:hover {
   color: transparent;

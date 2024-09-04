@@ -1,16 +1,17 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import { CiFacebook, CiInstagram, CiMail } from "react-icons/ci";
+import { MdPolicy } from "react-icons/md";
 import "../Footer/footer.scss";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer-container">
       <div className="footer-content">
         <div className="footer-section">
           <h3>About Us</h3>
           <p>Learn more about our mission and vision. <Link to={`/privacypolicy`}>
-            <button style={{backgroundColor:"transparent",border:"1px solid white",color:"white",cursor:"pointer"}}>Privacy Policy</button>
+            <button style={{backgroundColor:"#212529",border:"1px solid white",color:"white",cursor:"pointer"}}>Privacy Policy <MdPolicy /></button>
           </Link></p>
         </div>
         <div className="footer-section">

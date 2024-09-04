@@ -54,7 +54,7 @@ const Citypage = ({ searchQuery }) => {
     <div className="container">
       <div className="overview">
         <h1>{cityName.replace(/-/g, " ").toUpperCase()}</h1>
-        <p>Details about {cityName.replace(/-/g, " ")}</p>
+        <p>Details about {cityName.replace(/-/g, " ").toUpperCase()}</p>
       </div>
       <div className="rental-items" data-aos="fade-up">
         {rentals.length > 0 ? (
@@ -94,7 +94,7 @@ const RentalItem = ({ item }) => {
           <p className="items contact">
             Contact: {item.Contact}
             <a href={`https://wa.me/+91${item.Contact}`} className="hover-link">
-              Contact on WhatsApp
+              Contact Now
             </a>
           </p>
           <p className="items">Address: {item.Address}</p>

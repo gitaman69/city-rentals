@@ -1,5 +1,5 @@
-.footer {
-  background-color: black; /* Dark background for the footer */
+.footer-container {
+  background: #6c757d49; /* Dark background for the footer */
   color: white; /* Text color */
   padding: 0; /* Remove padding */
   height: 80px; /* Fixed height for consistency */
@@ -7,7 +7,7 @@
   align-items: center; /* Center content vertically */
   justify-content: center; /* Center content horizontally */
   text-align: center;
-  box-shadow: 0 -2px 5px rgba(150, 54, 54, 0.923); /* Optional: Add a shadow for visibility */
+  box-shadow: 0 -2px 5px #DEE2E6; /* Optional: Add a shadow for visibility */
   z-index: 1000;
 
   .footer-content {

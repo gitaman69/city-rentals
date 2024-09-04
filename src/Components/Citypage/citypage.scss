@@ -9,12 +9,12 @@
     flex-shrink: 0;
 
     h1 {
-      color: black;
+      color: white;
       margin-left: 25px;
     }
 
     p {
-      color: black;
+      color: white;
       font-size: 3vh;
     }
   }
@@ -106,10 +106,11 @@
 
           &:hover .hover-link {
             display: flex;
-            color: rgb(165, 231, 235);
+            border-radius: 10px;
+            color: rgb(167, 190, 190);
             border: 2px solid black;
-            background-color: rgba(30, 29, 29, 0.336);
-            height: 50px;
+            background-color: black;
+            height: 25px;
           }
 
           &:hover {

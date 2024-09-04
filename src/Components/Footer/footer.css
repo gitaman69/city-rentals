@@ -1,5 +1,5 @@
-.footer {
-  background-color: black; /* Dark background for the footer */
+.footer-container {
+  background: rgba(108, 117, 125, 0.2862745098); /* Dark background for the footer */
   color: white; /* Text color */
   padding: 0; /* Remove padding */
   height: 80px; /* Fixed height for consistency */
@@ -7,43 +7,43 @@
   align-items: center; /* Center content vertically */
   justify-content: center; /* Center content horizontally */
   text-align: center;
-  box-shadow: 0 -2px 5px rgba(150, 54, 54, 0.923); /* Optional: Add a shadow for visibility */
+  box-shadow: 0 -2px 5px #DEE2E6; /* Optional: Add a shadow for visibility */
   z-index: 1000;
 }
-.footer .footer-content {
+.footer-container .footer-content {
   display: flex; /* Use Flexbox for layout */
   justify-content: space-around; /* Space between sections */
   align-items: center; /* Center items vertically */
   width: 100%; /* Full width of the footer */
   max-width: 1200px; /* Optional: Set a max width */
 }
-.footer .footer-content .footer-section {
+.footer-container .footer-content .footer-section {
   flex: 1; /* Allow sections to grow equally */
   text-align: center; /* Center text horizontally */
 }
-.footer .footer-content .footer-section h3 {
+.footer-container .footer-content .footer-section h3 {
   margin-bottom: 0.5rem; /* Space below the heading */
   font-size: 1rem; /* Font size for headings */
 }
-.footer .footer-content .footer-section p {
+.footer-container .footer-content .footer-section p {
   margin: 0; /* Remove default margin */
   font-size: 0.8rem; /* Font size for paragraphs */
 }
-.footer .footer-content .footer-section .links {
+.footer-container .footer-content .footer-section .links {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
-.footer .footer-content .footer-section .links p {
+.footer-container .footer-content .footer-section .links p {
   color: white;
 }
-.footer .footer-content .footer-section .links p:hover {
+.footer-container .footer-content .footer-section .links p:hover {
   color: aquamarine;
 }
 @media screen and (max-width: 480px) {
-  .footer .footer-content .footer-section .links {
+  .footer-container .footer-content .footer-section .links {
     flex-direction: column;
     gap: 0;
   }

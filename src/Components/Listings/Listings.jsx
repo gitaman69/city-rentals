@@ -1,13 +1,12 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./listing.scss";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ListingForm = () => {
-
-    useEffect(()=>{
-        AOS.init({duration:1000});
-    },[]);
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -59,9 +58,9 @@ const ListingForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="form" data-aos="fade-up">
-        <div className="heading">
-            <h2 className="heading-text">List your Space</h2>
-        </div>
+      <div className="heading">
+        <h2 className="heading-text">List your Space</h2>
+      </div>
       <div className="name">
         <div className="name-text">Name of place:</div>
         <div className="name-input">
@@ -141,7 +140,9 @@ const ListingForm = () => {
         </div>
       </div>
       <div className="btn">
-        <button type="submit" className="submit-btn">Submit Listing</button>
+        <button type="submit" className="submit-btn">
+          Submit Listing
+        </button>
       </div>
     </form>
   );
