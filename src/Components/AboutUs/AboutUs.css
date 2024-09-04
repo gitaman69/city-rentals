@@ -14,7 +14,7 @@ body {
 }
 .about-us h1 {
   font-size: 3em;
-  color: #333;
+  color: #bb5f27;
   margin-bottom: 20px;
 }
 .about-us .intro {
@@ -33,12 +33,12 @@ body {
 }
 .about-us .content .text h2 {
   font-size: 2em;
-  color: #333;
+  color: #bb5f27;
   margin-bottom: 15px;
 }
 .about-us .content .text p {
   font-size: 1.1em;
-  color: #555;
+  color: white;
   line-height: 1.6;
   margin-bottom: 20px;
 }
