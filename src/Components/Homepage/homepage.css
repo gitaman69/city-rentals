@@ -49,10 +49,11 @@
   justify-content: center;
   position: relative;
   filter: drop-shadow(0 0 25px black);
+  transition: transform 0.3s ease;
 }
 .homepage .city-card:hover {
   filter: drop-shadow(1px 1px 2.5px rgba(255, 255, 255, 0.532));
-  transform: translateX(-10px);
+  transform: scale(1.03);
 }
 .homepage .city-card .city-button {
   display: inline-block;
